@@ -106,9 +106,9 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack)
    *  Prediction
    ****************************************************************************/
 
-  // debug: ignore radar data for now
-  if (measurement_pack.sensor_type_ == MeasurementPackage::LASER)
-    return;
+  // // debug: ignore radar data for now
+  // if (measurement_pack.sensor_type_ == MeasurementPackage::LASER)
+  //   return;
 
   // elapsed time (seconds)
   auto dt = (measurement_pack.timestamp_ - previous_timestamp_) / 1000000.0;
