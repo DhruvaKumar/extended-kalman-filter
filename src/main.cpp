@@ -126,6 +126,11 @@ int main()
 
     	  VectorXd RMSE = tools.CalculateRMSE(estimations, ground_truth);
 
+        // // debug
+        // std::cout << sensor_type << "\t" << timestamp << "\t" << 
+        // p_x << "," << p_y << "," << v1 << "," << v2 << "\t" <<
+        // x_gt << "," << y_gt << "," << vx_gt << "," << vy_gt << std::endl;
+
           json msgJson;
           msgJson["estimate_x"] = p_x;
           msgJson["estimate_y"] = p_y;

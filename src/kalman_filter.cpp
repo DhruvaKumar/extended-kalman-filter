@@ -1,3 +1,4 @@
+#include <iostream>
 #include "kalman_filter.h"
 
 using Eigen::MatrixXd;
@@ -5,6 +6,8 @@ using Eigen::VectorXd;
 
 // Please note that the Eigen library does not initialize 
 // VectorXd or MatrixXd objects with zeros upon creation.
+
+constexpr double pi() { return std::atan(1)*4; }
 
 KalmanFilter::KalmanFilter() {}
 
@@ -46,6 +49,11 @@ void KalmanFilter::UpdateEKF(const VectorXd &z)
 {
   // measurement residual
   VectorXd y = z - hx_;
+  // bound bearing angle within [-pi,pi]
+  y[1] = std::atan2(std::sin(y[1]), std::cos(y[1]));
+  if (fabs(y[1]) > pi())
+    std::cout << "ERROR: theta out of range " << y[1] << std::endl;
+
   MatrixXd Ht = H_.transpose();
   MatrixXd S = H_* P_ * Ht + R_;
   MatrixXd K = P_ * Ht * S.inverse();
