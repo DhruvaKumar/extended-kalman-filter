@@ -1,6 +1,6 @@
 # Extended Kalman Filter
 
-This project was done as a part of (Udacity's SDN)[https://github.com/udacity/CarND-Extended-Kalman-Filter-Project]. The goal is to use a EKF to fuse noisy lidar and radar data in order to estimate and track the state of a vehicle. [Udacity's simulator](https://github.com/udacity/self-driving-car-sim/releases) provides the noisy data
+This project was done as a part of [Udacity's SDN](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project). The goal is to use a EKF to fuse noisy lidar and radar data in order to estimate and track the state of a vehicle. [Udacity's simulator](https://github.com/udacity/self-driving-car-sim/releases) provides the noisy data
 
 ## Dependencies
 
@@ -29,6 +29,8 @@ This project was done as a part of (Udacity's SDN)[https://github.com/udacity/Ca
 After running the EKF on dataset 1
 
 ![alt text](results/data1.png)
+
+Red circles are lidar measurements. Blue = radar measurements. Green = car's position estimated by the EKF.
 
 After running the EKF on dataset 2
 
